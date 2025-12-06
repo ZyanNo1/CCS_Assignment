@@ -53,4 +53,4 @@ jobs:
           context: .
           push: true
           # 注意：镜像名称必须全部小写
-          tags: ghcr.io/zyanno1/ccs-assignment:latest
+          tags: ghcr.io/zyanno1/ci-cd-practice:latest

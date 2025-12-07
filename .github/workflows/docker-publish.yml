@@ -58,5 +58,5 @@ jobs:
           push: true
           # 注意：镜像名称必须全部小写
           tags: |
-            ghcr.io/zyanno1/ccs-assignment:latest
-            ghcr.io/zyanno1/ccs-assignment:${{ env.SHORT_SHA }}
+            ghcr.io/zyanno1/ci-cd-practice:latest
+            ghcr.io/zyanno1/ci-cd-practice:${{ env.SHORT_SHA }}

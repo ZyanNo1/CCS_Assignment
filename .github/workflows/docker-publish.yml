@@ -45,7 +45,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
+          
+      # 获取当前的哈希    
+      - name: Set short SHA
+        run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
+        
       # 构建并推送
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -53,4 +57,6 @@ jobs:
           context: .
           push: true
           # 注意：镜像名称必须全部小写
-          tags: ghcr.io/zyanno1/ci-cd-practice:latest
+          tags: |
+            ghcr.io/zyanno1/ccs-assignment:latest
+            ghcr.io/zyanno1/ccs-assignment:${{ env.SHORT_SHA }}
